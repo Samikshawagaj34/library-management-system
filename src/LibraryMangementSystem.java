@@ -1,6 +1,6 @@
 // Mini-project : Library Mangement System
 
-class Book{
+class Book{                       //Encapsulation
 	private int id;
 	private String title;
 	private boolean issued;
@@ -12,11 +12,11 @@ class Book{
 		
 	}
 	
-	public int getId(){
+	public int getId(){              // getter method
 		return id
 	}
 	
-	public String getTitl(){
+	public String getTitle(){
 		return title;
 	}
 	
@@ -24,7 +24,7 @@ class Book{
 		return issued;
 	} 
 	
-	public void setIssued(boolean issued){
+	public void setIssued(boolean issued){    // setter method
 		this.issued = issued;
 	}
 	
@@ -40,6 +40,35 @@ class Book{
 	public void display(){
 		System.out.println(id + ":" + title + " : Issued :" + issue);
 	}
+}
+
+
+abstract class LibraryManager{              // Abstraction
+	abstract void issue(Book b);
+	abstract void returnBook(Book b);
+}
+
+class Library extends LibraryManager{
+	
+	@override
+	void issue(Book b){
+		if(!b.isIssued()){
+			b.issue();
+			System.out.println("Book issued:" + b.getTitle());
+		} else {
+			System.out.printn("Book Already issued");
+		}
+	}
+	
+	@override
+void returnBook(Book b){
+	if(b.isIssued()){
+		b.returnBook();
+		System.out.println("Book returned:" + b.getTitle());
+	} else {
+		System.out.println("Not issued Book");
+	}
+}
 }
 
 public class LibraryMangementSystem{
