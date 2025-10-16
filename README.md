@@ -13,3 +13,7 @@ Mini-project: Library Management System in Core Java.
 ## How to run
 1. Compile: `javac LibraryMangementSystem.java`
 2. Run: `java LibraryMangementSystem`
+
+##Screenshot
+
+![program Output](images/output.png)
