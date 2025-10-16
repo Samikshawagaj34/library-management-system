@@ -8,12 +8,12 @@ class Book{                       //Encapsulation
 	public Book(int id,  String title){
 		this.id = id;
 		this.title = title;
-		this issued = false;
+		this.issued = false;
 		
 	}
 	
 	public int getId(){              // getter method
-		return id
+		return id;
 	}
 	
 	public String getTitle(){
@@ -69,6 +69,26 @@ void returnBook(Book b){
 		System.out.println("Not issued Book");
 	}
 }
+}
+
+class Student{
+	String name;
+	public Student(String name){
+		this.name = name;
+	}
+	
+	public void display(){
+		System.out.println("Student:" + name);
+	}
+}
+class Librarian extends Student{
+	public Librarian(String name){
+		this.name = name;
+	}
+	@override
+	public void display(){
+		System.out.println("Librarian:" + name);
+	}
 }
 
 public class LibraryMangementSystem{
